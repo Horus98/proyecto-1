@@ -1,18 +1,68 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="background">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/app.css">
+    <header>
+        <p>
+            <div class="font">Download time calculator</div>
+        </p>
+    </header>
+    <div id="borderDemo"></div>
+    <p>
+        <div class="caja">Aqui iria una breve descripcion del funcionamiento de la pagina y el resto.</div>
+    </p>
+    <p>
+        <div class="txt">
+            Ingrese su velocidad de descarga: <input class="cajatexto" type="text" name="cajaVel">
+            <input class="radiobotton" type="radio" name="vel" value="Kb/s" > Kb/s
+            <input class="radiobotton" type="radio" name="vel" value="Mb/s" > Mb/s
+            <input class="radiobotton" type="radio" name="vel" value="Gb/s" > Gb/s
 
-    <title>Proyecto 1</title>
-  </head>
-  <body>
-    <h1>Proyecto 1</h1>
+        </div>
+        <br>
+        <div class="txt">
+            Ingrese el tamaño del archivo: <input class="cajatexto" type="text" name="cajaTam">
+            <input class="radiobotton" type="radio" name="tama" value="KB" > KB
+            <input class="radiobotton" type="radio" name="tama" value="MB" > MB
+            <input class="radiobotton" type="radio" name="tama" value="GB" > GB
 
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
-  </body>
+        </div>
+        <br>
+        <div>
+            <a href="#" class="rainbow-button" alt="Calcular"></a>
+        </div>
+    </p>
+    <br>
+   <p>
+    <table class="tablaResultado">
+        <tr class="fila">
+          <th class="encabezado">Velocidad de descarga</th>
+          <th class="encabezado">Tiempo estimado</th>
+        </tr>
+        <tr class="fila">
+          <td class="columna">3G</td>
+          <td class="columna" id="vel3g"></td>
+        </tr>
+        <tr class="fila">
+          <td class="columna">4G</td>
+          <td class="columna" id="vel4g"></td>
+            </tr>
+        <tr class="fila">
+          <td class="columna">5G</td>
+          <td class="columna" id="vel5g"></td>
+        </tr>
+        <tr class="fila">
+          <td class="columna">Su Velocidad</td>
+          <td class="columna" id="velYour"></td>
+      </tr>
+      </table>
+   </p>
+
+</body>
 </html>
