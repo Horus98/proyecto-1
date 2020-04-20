@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body class="background">
-
+    
     <header>
         <p>
             <div class="font">Download time calculator</div>
@@ -16,8 +16,8 @@
     <div id="borderDemo"></div>
     <p>
         <div class="caja">
-            <p>
-                En esta página usted podrá saber el tiempo requerido para descargar un archivo según
+            <p> 
+                En esta página usted podrá saber el tiempo requerido para descargar un archivo según 
                 diferentes velocidades de descarga, incluido la suya.
             </p>
             <p>
@@ -29,24 +29,28 @@
     </p>
     <p>
         <div class="txt">
-            Ingrese su velocidad de descarga: <input class="cajatexto" type="text" name="cajaVel">
-            <input class="radiobotton" type="radio" name="vel" value="Kb/s" > Kb/s
-            <input class="radiobotton" type="radio" name="vel" value="Mb/s" > Mb/s
-            <input class="radiobotton" type="radio" name="vel" value="Gb/s" > Gb/s
-
+            <span>
+                Ingrese su velocidad de descarga: <input class="cajatexto" type="text" name="cajaVel"> 
+                <input type="radio" name="descarga" value="one" id="radio-kbs" class="form-radio" >
+                <label for="radio-kbs">Kb/s</label>
+                <input type="radio" name="descarga" value="one" id="radio-mbs" class="form-radio" >
+                <label for="radio-mbs">Mb/s</label>
+                <input type="radio" name="descarga" value="one" id="radio-gbs" class="form-radio" >
+                <label for="radio-gbs">Gb/s</label>
+            </span>
         </div>
         <br>
         <div class="txt">
             <span>
                 Ingrese el tamaño del archivo: <input class="cajatexto" type="text" name="cajaTam">
-                <input type="radio" name="demo" value="one" id="radio-kb" class="form-radio" >
+                <input type="radio" name="peso" value="one" id="radio-kb" class="form-radio" >
                 <label for="radio-kb">KB</label>
-                <input type="radio" name="demo" value="one" id="radio-mb" class="form-radio" >
+                <input type="radio" name="peso" value="one" id="radio-mb" class="form-radio" >
                 <label for="radio-mb">MB</label>
-                <input type="radio" name="demo" value="one" id="radio-gb" class="form-radio" >
+                <input type="radio" name="peso" value="one" id="radio-gb" class="form-radio" >
                 <label for="radio-gb">GB</label>
             </span>
-
+            
         </div>
         <br>
         <div>
@@ -62,7 +66,7 @@
         </tr>
         <tr class="fila">
           <td class="columna">3G</td>
-          <td class="columna" id="vel3g"></td>
+          <td class="columna" id="vel3g"></td>   
         </tr>
         <tr class="fila">
           <td class="columna">4G</td>
@@ -70,7 +74,7 @@
             </tr>
         <tr class="fila">
           <td class="columna">5G</td>
-          <td class="columna" id="vel5g"></td>
+          <td class="columna" id="vel5g"></td>   
         </tr>
         <tr class="fila">
           <td class="columna">Su Velocidad</td>
@@ -78,6 +82,6 @@
       </tr>
       </table>
    </p>
-
+    
 </body>
 </html>
