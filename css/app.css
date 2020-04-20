@@ -63,6 +63,13 @@ background-color: #030303;
 color:rgb(255, 255, 255); 
 border: 2px solid black;
 }
+
+@media only screen and (min-width: 300px){
+  .cajatexto{
+    width: 50px;
+  }
+}
+
 .cajatexto:focus{
 outline: 0;
 border-radius: 3px;
@@ -91,19 +98,10 @@ box-shadow: 0 0 0 2px red;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 
 }
+
 @media only screen and (min-width: 300px){
   .txt{
-    font-size: 6px;
-  }
-}
-@media only screen and (min-width: 420px){
-  .txt{
-    font-size: 10px;
-  }
-}
-@media only screen and (min-width: 530px){
-  .txt{
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 @media only screen and (min-width: 650px){
@@ -132,7 +130,7 @@ box-shadow: 0 0 0 2px red;
    position: relative;
    background-color: #f1f1f1;
    color: red;
-   top: 5px;
+   top: 2px;
    height: 20px;
    width: 20px;
    border: 0;
@@ -141,6 +139,13 @@ box-shadow: 0 0 0 2px red;
    margin-right: 7px;
    outline: none;
 }
+@media only screen and (min-width: 300px){
+  .form-radio{
+    height: 15px;
+    width: 15px;
+  }
+}
+
 .form-radio:checked::before
 {
    position: absolute;
