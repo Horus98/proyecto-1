@@ -14,6 +14,34 @@
   text-transform: none;
   }
 
+  
+  @media only screen and (min-width: 420px){
+    .font{
+      font-size: 16px;
+    }
+  }
+  @media only screen and (min-width: 530px){
+    .font{
+      font-size: 20px;
+    }
+  }
+  @media only screen and (min-width: 650px){
+    .font{
+      font-size: 23px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px){
+    .font{
+      font-size: 27px;
+    }
+  }
+  @media only screen and (min-width: 1080px){
+    .font{
+      font-size: 30px;
+    }
+  }
+
 #borderDemo {
       border: 5px solid rgb(7, 7, 7);
       border-radius: 24px;
@@ -62,6 +90,37 @@ box-shadow: 0 0 0 2px red;
   text-align: center;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 
+}
+@media only screen and (min-width: 300px){
+  .txt{
+    font-size: 6px;
+  }
+}
+@media only screen and (min-width: 420px){
+  .txt{
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 530px){
+  .txt{
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 650px){
+  .txt{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .txt{
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1080px){
+  .txt{
+    font-size: 18px;
+  }
 }
 
 .form-radio
