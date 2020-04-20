@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <link rel="stylesheet" href="estilos.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body class="background">
-
+    
     <header>
         <p>
             <div class="font">Download time calculator</div>
@@ -15,11 +15,21 @@
     </header>
     <div id="borderDemo"></div>
     <p>
-        <div class="caja">Aqui iria una breve descripcion del funcionamiento de la pagina y el resto.</div>
+        <div class="caja">
+            <p> 
+                En esta página usted podrá saber el tiempo requerido para descargar un archivo según 
+                diferentes velocidades de descarga, incluido la suya.
+            </p>
+            <p>
+                Para ello, debera ingresar en ambos recuadros el tamaño del archivo, y su velocidad,
+                 indicando su unidad, y luego, hacer click en el botón calcular, los resultados seran
+                 visualizados en la tabla de la parte inferior.
+            </p>
+        </div>
     </p>
     <p>
         <div class="txt">
-            Ingrese su velocidad de descarga: <input class="cajatexto" type="text" name="cajaVel">
+            Ingrese su velocidad de descarga: <input class="cajatexto" type="text" name="cajaVel"> 
             <input class="radiobotton" type="radio" name="vel" value="Kb/s" > Kb/s
             <input class="radiobotton" type="radio" name="vel" value="Mb/s" > Mb/s
             <input class="radiobotton" type="radio" name="vel" value="Gb/s" > Gb/s
@@ -27,11 +37,16 @@
         </div>
         <br>
         <div class="txt">
-            Ingrese el tamaño del archivo: <input class="cajatexto" type="text" name="cajaTam">
-            <input class="radiobotton" type="radio" name="tama" value="KB" > KB
-            <input class="radiobotton" type="radio" name="tama" value="MB" > MB
-            <input class="radiobotton" type="radio" name="tama" value="GB" > GB
-
+            <span>
+                Ingrese el tamaño del archivo: <input class="cajatexto" type="text" name="cajaTam">
+                <input type="radio" name="demo" value="one" id="radio-kb" class="form-radio" >
+                <label for="radio-kb">KB</label>
+                <input type="radio" name="demo" value="one" id="radio-mb" class="form-radio" >
+                <label for="radio-mb">MB</label>
+                <input type="radio" name="demo" value="one" id="radio-gb" class="form-radio" >
+                <label for="radio-gb">GB</label>
+            </span>
+            
         </div>
         <br>
         <div>
@@ -47,7 +62,7 @@
         </tr>
         <tr class="fila">
           <td class="columna">3G</td>
-          <td class="columna" id="vel3g"></td>
+          <td class="columna" id="vel3g"></td>   
         </tr>
         <tr class="fila">
           <td class="columna">4G</td>
@@ -55,7 +70,7 @@
             </tr>
         <tr class="fila">
           <td class="columna">5G</td>
-          <td class="columna" id="vel5g"></td>
+          <td class="columna" id="vel5g"></td>   
         </tr>
         <tr class="fila">
           <td class="columna">Su Velocidad</td>
@@ -63,6 +78,6 @@
       </tr>
       </table>
    </p>
-
+    
 </body>
 </html>
