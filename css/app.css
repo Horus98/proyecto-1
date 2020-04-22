@@ -45,44 +45,45 @@
     }
   }
 
-#borderDemo {
-      border: 5px solid rgb(7, 7, 7);
-      border-radius: 24px;
-      }
-#descripcion {
-  font-family: "Arial Black", Gadget, sans-serif;
-  
-  font-size: 20px;
-  text-align: center;
-  color:darkgreen;
 
-}
 .background {
 background-color: rgb(22, 22, 22);
 -webkit-font-smoothing: antialiased;
 
 }
+
+.link_velocidad {
+  color: red;
+}
 .cajatexto{
 background-color: #030303;
 color:rgb(255, 255, 255); 
 border: 2px solid black;
+height: 25px;
+font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+font-size: 16px ;
 }
 
 @media only screen and (min-width: 300px){
   .cajatexto{
-    width: 18px;
+    width: 100px;
+    height: 18px;
+    font-size: 9px;
   }
 }
 
 @media only screen and (min-width: 350px){
   .cajatexto{
-    width: 40px;
+    width: 180px;
+    height: 20px;
+    font-size: 11px;
   }
 }
 
 @media only screen and (min-width: 450px){
   .cajatexto{
-    width: 200px;
+    width: 300px;
+    font-size: 16px;
   }
 }
 
@@ -212,9 +213,10 @@ box-shadow: 0 0 0 2px red;
    cursor: pointer;
 }
 .imagen{
-  width: 35px;
-  height: 35px;
-  left: 700px;
+  width: 40px;
+  height: 40px;
+  position: relative; 
+  top: 8px;
 }
 
 a {
@@ -247,6 +249,22 @@ a {
 .rainbow-button:hover {
   animation: slidebg 3s linear infinite;
 }
+
+@media only screen and (min-width: 720px){
+  .rainbow-button:after{
+    width: 14vw;
+    height: 4vw;
+  }
+}
+
+@media only screen and (min-width: 720px){
+  .rainbow-button{
+    width:calc(14vw + 6px);
+    height:calc(4vw + 6px);
+    font-size: 1.5vw;
+  }
+}
+
 
 @keyframes slidebg {
   to {
@@ -285,7 +303,7 @@ a {
 h4 {
     
     margin:  1% 0 1% 11%;
-    margin-top: 100px;
+    margin-top: 70px;
     color: #ffffff;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
 
@@ -308,7 +326,7 @@ ul {
     color: #fff;
 }
 ul.social-icons {
-    margin-top: 10px;
+    margin-top: 8px;
 }
 .social-icons li {
     vertical-align: top;
