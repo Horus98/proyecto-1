@@ -37,6 +37,7 @@ function verificarEntrada(entrada){
 		if(!(entrada[i].match(/[0-9]/g)))
 			return false;
 	}
+	return true;
 }
 
 
@@ -47,7 +48,8 @@ boton.onclick = function() {
 	var tam = obtenerValorCheckeado(formularioPeso);
 	var velocidadValue = velocidad.value;
 	var tamanioValue = tamanio.value;
-	var valoresIncorrectos = velocidadValue == "" || tamanioValue == "" || !verificarEntrada(Array.from(velocidadValue)) || !verificarEntrada(Array.from(tamanioValue));
+	var valoresIncorrectos = velocidadValue == "" || tamanioValue == "" || 
+	!(verificarEntrada(Array.from(velocidadValue))) || !(verificarEntrada(Array.from(tamanioValue)));
 
 	if (valoresIncorrectos){
 		alert("Por favor Ingrese los valores requeridos")
