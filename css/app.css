@@ -109,6 +109,28 @@ box-shadow: 0 0 0 2px red;
   border: 2px solid #030303;
 }
 
+@media only screen and (min-width: 300px){
+  .caja{
+    
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 350px){
+  .caja{
+    
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 450px){
+  .caja{
+    
+    font-size: 18px;
+  }
+}
+
+
 
 
 .txt {
