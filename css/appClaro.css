@@ -2,10 +2,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
 
-.titulo{
-  display: flex;
 
-}
 .font{
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 29px;
@@ -18,7 +15,6 @@
   font-style: normal;
   font-variant: normal;
   text-transform: none;
-  position: relative;
   }
 
   
@@ -49,6 +45,19 @@
     }
   }
 
+  .themeButton {
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+   
+  .themeButton {background-color: black;}
+
 .background {
 background-color: rgb(22, 22, 22);
 -webkit-font-smoothing: antialiased;
@@ -56,7 +65,7 @@ background-color: rgb(22, 22, 22);
 }
 
 .link_velocidad {
-  color: red;
+  color: blue;
 }
 .cajatexto{
 background-color: #030303;
@@ -93,7 +102,7 @@ font-size: 16px ;
 .cajatexto:focus{
 outline: 0;
 border-radius: 3px;
-box-shadow: 0 0 0 2px red;
+box-shadow: 0 0 0 2px blue;
 }
 
 .caja { 
@@ -180,7 +189,7 @@ box-shadow: 0 0 0 2px red;
    display: inline-block;
    position: relative;
    background-color: #f1f1f1;
-   color: red;
+   color: blue;
    top: 2px;
    height: 20px;
    width: 20px;
@@ -228,12 +237,12 @@ box-shadow: 0 0 0 2px red;
 }
 .form-radio:checked
 {
-   background-color: red;
+   background-color: blue;
 }
 .label
 {
    font: 15px/1.7 'Open Sans', sans-serif;
-   color: red;
+   color: blue;
    
    cursor: pointer;
 }
@@ -303,37 +312,7 @@ a {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  
 }
-
-@media only screen and (min-width: 300px){
-  .tablaResultado{
-    
-    font-size: 10px;
-  }
-}
-
-@media only screen and (min-width: 350px){
-  .tablaResultado{
-    
-    font-size: 12px;
-  }
-}
-
-@media only screen and (min-width: 450px){
-  .tablaResultado{
-    
-    font-size: 14px;
-  }
-}
-
-@media only screen and (min-width: 720px){
-  .tablaResultado{
-    
-    font-size: 18px;
-  }
-}
-
 
 .encabezado, .columna {
   text-align: left;
@@ -349,11 +328,8 @@ a {
 
 .encabezado {
   background-color: rgb(58, 58, 58);
-  text-align: center;
   color: white;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-  width: 50%;
- 
 }
 
 
@@ -454,97 +430,3 @@ ul.social-icons {
 .fa-github:hover {
     background-color: #5a32a3;
 }
-
-
-.switch{
-  background: darkgoldenrod;
-  border-radius: 1000px;
-  border: none;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  outline: none;
-  margin-left: auto;
-  top: -27px;
-}
-
-.switch .btndark{
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  display: block;
-  background: none;
-  color: #fff;
-}
-
-switch::after{
-  content: "";
-  display: block;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  background: #F1F1F1;
-  top: 0;
-  left: 0;
-  right: unset;
-  border-radius: 1000px;
-  transition: .3s ease all;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
-}
-
-/* Cambio de tema*/
-
-body.dark .switch {
-  background: #343D5B;
-}
-
-body.dark .caja {
-  color: black;
-  background: wheat;
-}
-
-body.dark .font{
-  color: black;
-}
-
-body.dark {
-  background: whitesmoke;
-}
-
-body.dark .cajatexto{
-  background-color: wheat;
-  border-radius: 6px;
-  border-color: #254BE6;
-}
-
-body.dark .cajatexto:focus {
-  box-shadow: 0 0 0 2px #254BE6;
-}
-
-body.dark .font {
-  color: rgb(0, 0, 0);
-}
-
-body.dark .txt {
-  color: black;
-}
-
-body.dark .link_velocidad {
-  color: #254BE6;
-}
-
-body.dark .form-radio{
-  background-color: darkgrey;
-}
-
-body.dark .form-radio:checked
-{
-   background-color: #254BE6;
-}
-
-body.dark .fila {
-  color: black;
-  background-color: wheat;
-}
-
-body.dark .fila:nth-child(even){background-color: rgb(240, 200, 126)}
