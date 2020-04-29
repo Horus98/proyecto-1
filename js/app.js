@@ -58,14 +58,21 @@ boton.onclick = function() {
 	var tam = obtenerValorCheckeado(formularioPeso);
 	var velocidadValue = velocidad.value;
 	var tamanioValue = tamanio.value;
-	var valoresIncorrectos = velocidadValue == "" || tamanioValue == "" || 
-	!(verificarEntrada(Array.from(velocidadValue))) || !(verificarEntrada(Array.from(tamanioValue)));
+	var valoresVacios = velocidadValue == "" || tamanioValue == "";
+	var noSonNumeros = !(verificarEntrada(Array.from(velocidadValue))) || !(verificarEntrada(Array.from(tamanioValue)));
 
-	if (valoresIncorrectos){
-		alert("Por favor Ingrese los valores requeridos")
+	if (valoresVacios){
+		alert("Por favor complete ambos campos")
 		velocidad.value = "";
 		tamanio.value = "";
 	}
+	else{
+		if(noSonNumeros){
+			alert("Por favor recuerde que debe ingresar numeros enteros")
+			velocidad.value = "";
+			tamanio.value = "";
+		}
+	
 	else{
 		vel = velocidadValue * vel;
 		vel = vel/8;
@@ -89,6 +96,7 @@ boton.onclick = function() {
 		tamanio.value = "";
 	}
 
+}
 }
 
 // Almacena una cadena en el localStorage.
@@ -133,7 +141,7 @@ function armarCadena(vel,tam,tiempoVelocidadUsuario) {
 	var tamanio = "";
 	if( tam > 1024){
 		tam = (tam / 1024).toFixed(1);
-		tamanio = "Tamaño: "+tam+"GB ";
+		tamanio = "Tamaño: "+tam+"GB || ";
 	}
 	else
 		tamanio = "Tamaño: "+tam+"MB || ";
