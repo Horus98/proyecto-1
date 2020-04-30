@@ -213,7 +213,12 @@ box-shadow: 0 0 0 2px red;
     top: 4px;
   }
 }
-
+.txtTema{
+  font-size: 10px;
+  color: darkgray;
+  font-size: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  text-align: justify;
+}
 .form-radio:checked::before
 {
    position: absolute;
