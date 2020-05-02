@@ -1,9 +1,9 @@
-var boton = document.getElementById("botonCalcular");
-var velocidad = document.getElementById("velocidadDescarga");
-var tamanio = document.getElementById("tamArchivo");
-var tablaValoresAnterioresBody = document.getElementById("tablaValoresAnterioresBody");
+var boton = getElement("botonCalcular");
+var velocidad = getElement("velocidadDescarga");
+var tamanio = getElement("tamArchivo");
+var tablaValoresAnterioresBody = getElement("tablaValoresAnterioresBody");
 
-
+// https://sweetalert2.github.io/ libreria alert.
 const valoresAlmacenados = 5;
 const clave = "claveAlmacenamiento";
 
@@ -14,13 +14,29 @@ const velocidad3G = 0.625
 init();
 
 
+// Obtiene el elemento del html por su ID.
+function getElement(id) {
+	return document.getElementById(id);
+}
+
+// Inserta un valor en un elemento del html segun el id
+function insertElement(id,elemento){
+	getElement(id).innerHTML = elemento
+}
+
+// Limpia los input text 
+function cleanInputText() {
+	velocidad.value = "";
+	tamanio.value = "";
+}
+
 // Obtiene el valor del radio button checkeado dado un formulario.
 function obtenerValorCheckeado(formulario) {
 	for (var i = 0; i < formulario.length; i++) {
 		if (formulario[i].checked) 
 			break;
 		}
-  return formulario[i].value ;
+  return formulario[i] ;
 }
 
 // Calcula el tiempo requerido para descargar un archivo de tamaño "tam" a una velocidad "vel".
@@ -51,32 +67,50 @@ function verificarEntrada(entrada){
 	return true;
 }
 
+// Crea una alerta personalizada.
+function alerta(texto){
+	Swal.fire({
+		icon: 'error',
+		title: 'Oops...',
+		text: texto,
+		timer: 2000,
+		confirmButtonColor: '#d33',
+		timerProgressBar: true,
+	  })
+
+}
+
+// Alerta segun el error.
+function alertar (valoresVacios, noSonNumeros) {
+	if (valoresVacios){
+		alerta('Complete ambos campos!')
+		cleanInputText();
+	}
+	else{
+		if(noSonNumeros){
+			alerta('Por favor recuerde que debe ingresar numeros enteros!')
+			cleanInputText();
+		}
+	}
+}
+
+
 boton.onclick = function() {
-	var formularioDescarga = document.forms[0].descarga;
-	var formularioPeso = document.forms[1].peso;
-	var vel = obtenerValorCheckeado(formularioDescarga);
-	var tam = obtenerValorCheckeado(formularioPeso);
+	var velForm = obtenerValorCheckeado(document.forms[0].descarga);
+	var tamForm = obtenerValorCheckeado(document.forms[1].peso);
+	var vel = velForm.value;
+	var tam = tamForm.value;
 	var velocidadValue = velocidad.value;
 	var tamanioValue = tamanio.value;
 	var valoresVacios = velocidadValue == "" || tamanioValue == "";
 	var noSonNumeros = !(verificarEntrada(Array.from(velocidadValue))) || !(verificarEntrada(Array.from(tamanioValue)));
+	var hayQueAlertar = valoresVacios || noSonNumeros ;
 
-	if (valoresVacios){
-		alert("Por favor complete ambos campos")
-		velocidad.value = "";
-		tamanio.value = "";
-	}
-	else{
-		if(noSonNumeros){
-			alert("Por favor recuerde que debe ingresar numeros enteros")
-			velocidad.value = "";
-			tamanio.value = "";
-		}
+	if (hayQueAlertar)
+		alertar(valoresVacios, noSonNumeros);
 	
 	else{
-		vel = velocidadValue * vel;
-		vel = vel/8;
-	
+		vel = (velocidadValue * vel) / 8;
 		tam = tamanioValue * tam;
 		
 		var tiempoVelocidadUsuario = calcularTiempo(tam,vel);
@@ -84,20 +118,20 @@ boton.onclick = function() {
 		var tiempoVelocidad4G = calcularTiempo(tam,velocidad4G);
 		var tiempoVelocidad3G = calcularTiempo(tam,velocidad3G);
 
-		var cadenaStorage = armarCadena(vel,tam,tiempoVelocidadUsuario);
-		storeCadena(cadenaStorage);
+		 
+		storeCadena(armarCadena(velocidadValue,tamanioValue,tiempoVelocidadUsuario,velForm.id,tamForm.id));
 
-		document.getElementById("vel3g").innerHTML = tiempoVelocidad3G;
-		document.getElementById("vel4g").innerHTML = tiempoVelocidad4G;
-		document.getElementById("vel5g").innerHTML = tiempoVelocidad5G;
-		document.getElementById("tuVelocidad").innerHTML = tiempoVelocidadUsuario;
+		insertElement("vel3g",tiempoVelocidad3G);
+		insertElement("vel4g",tiempoVelocidad4G);
+		insertElement("vel5g",tiempoVelocidad5G);
+		insertElement("tuVelocidad",tiempoVelocidadUsuario);
+
 		actualizarTablaValores();
-		velocidad.value = "";
-		tamanio.value = "";
+		cleanInputText();
 	}
 
 }
-}
+
 
 // Almacena una cadena en el localStorage.
 function storeCadena(cadena) {  
@@ -106,7 +140,7 @@ function storeCadena(cadena) {
 		insertar(cadenaArray,cadena);
 		localStorage.setItem(clave, JSON.stringify(cadenaArray));
 	} else
-		alert("El localStorage no está habilitado en su navegador");   
+		alerta("El localStorage no está habilitado en su navegador");   
 }
 
 // Devuelve un arreglo con las cadenas almacenadas en el localStorage
@@ -134,19 +168,10 @@ function init(){
 }
 
 // Arma la cadena para luego ser mostrada en la tablaValoresAnteriores.
-function armarCadena(vel,tam,tiempoVelocidadUsuario) {
-	vel = vel.toFixed(1);
-	tam = tam.toFixed(1);
-	var velocidad = "Velocidad: "+vel+"MBps || ";
-	var tamanio = "";
-	if( tam > 1024){
-		tam = (tam / 1024).toFixed(1);
-		tamanio = "Tamaño: "+tam+"GB || ";
-	}
-	else
-		tamanio = "Tamaño: "+tam+"MB || ";
-	var cadena = velocidad + tamanio +"Tiempo: " + tiempoVelocidadUsuario;
-	return cadena;
+function armarCadena(vel,tam,tiempoVelocidadUsuario,unidadVel,unidadTam) {
+		var velocidad = "Velocidad: " + vel + unidadVel + " || ";
+		var tamanio = "Tamaño: " + tam + unidadTam + " || ";
+	return velocidad + tamanio +"Tiempo: " + tiempoVelocidadUsuario;;
 }
 
 function almacenarCadena(arr){
@@ -173,7 +198,7 @@ function actualizarTablaValores (){
 }
 }
 
-const btnSwitch = document.getElementById("switch");
+const btnSwitch = getElement("switch");
 
 
 

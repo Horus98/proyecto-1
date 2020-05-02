@@ -116,14 +116,14 @@ box-shadow: 0 0 0 2px red;
 @media only screen and (min-width: 300px){
   .caja{
     
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
 @media only screen and (min-width: 350px){
   .caja{
     
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -439,24 +439,25 @@ ul.social-icons {
 
 .switch{
   background: darkgoldenrod;
-  border-radius: 1000px;
+  border-radius: 10px;
   border: none;
   position: relative;
   cursor: pointer;
   display: flex;
   outline: none;
   margin-left: auto;
-  top: -27px;
+  margin-top: -1.7em;
  
 }
 
 .switch .btndark{
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
   display: block;
   background: none;
   color: #fff;
+  transition-duration: 0.5s;
 }
 
 .switch::after{
@@ -467,33 +468,32 @@ ul.social-icons {
   position: absolute;
   background: #F1F1F1;
   top: 1px;
-  left: 3px;
-  right: unset;
+  left: unset;
+  right: 3px;
   border-radius: 100px;
-  transition: .3s ease all;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
 }
 
 @media only screen and (min-width: 300px){
   .switch .btndark{
-    width: 12px;
-    height: 14px;
-    line-height: 12px;
+    width: 10px;
+    height: 12px;
+    line-height: 11.5px;
   }
 }
 
 @media only screen and (min-width: 400px){
   .switch .btndark{
-    width: 16px;
-    height: 18px;
-    line-height: 18px;
+    width: 12px;
+    height: 16px;
+    line-height: 16px;
   }
 }
 
 @media only screen and (min-width: 300px){
   .switch::after{
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     line-height: 14px;
     top: 1px;
     left: 4px;
@@ -502,19 +502,40 @@ ul.social-icons {
 
 @media only screen and (min-width: 400px){
   .switch::after{
-    width: 18px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    top: 1px;
+    left: 3px;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  .switch .btndark{
+    width: 14px;
     height: 18px;
     line-height: 18px;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  .switch::after{
+    width: 17px;
+    height: 17px;
+    line-height: 16px;
     top: 1px;
     left: 3px;
   }
 }
 
 
+
+
 /* Cambio de tema*/
 
 body.dark .switch {
   background: #343D5B;
+  
 }
 
 body.dark .switch::after{
@@ -522,6 +543,7 @@ body.dark .switch::after{
   top: 1px;
   left: unset;
   right: 3px;
+  
 }
 
 body.dark .caja {
@@ -609,3 +631,5 @@ body.dark .botonCalcular :focus{
   box-shadow: 0 0 0 3px #254BE6;
   border-radius: 3px;
 }
+
+
