@@ -10,5 +10,7 @@ link directo a una página que le calcula la velocidad de descarga de manera inm
 Tambien podra cambiar el tema de la pagina, por uno claro o oscuro.
 Y finalmente, tendrá acceso a mis redes sociales por si desea comunicarse.
 
+## Librerias usadas :
+https://sweetalert2.github.io/
 
 
