@@ -15,7 +15,6 @@
   font-style: normal;
   font-variant: normal;
   text-transform: none;
-  position: relative;
   }
 
   
@@ -46,6 +45,19 @@
     }
   }
 
+  .themeButton {
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+   
+  .themeButton {background-color: black;}
+
 .background {
 background-color: rgb(22, 22, 22);
 -webkit-font-smoothing: antialiased;
@@ -53,11 +65,10 @@ background-color: rgb(22, 22, 22);
 }
 
 .link_velocidad {
-  color: red;
+  color: blue;
 }
 .cajatexto{
 background-color: #030303;
-border-radius: 4px;
 color:rgb(255, 255, 255); 
 border: 2px solid black;
 height: 25px;
@@ -91,7 +102,7 @@ font-size: 16px ;
 .cajatexto:focus{
 outline: 0;
 border-radius: 3px;
-box-shadow: 0 0 0 2px red;
+box-shadow: 0 0 0 2px blue;
 }
 
 .caja { 
@@ -113,14 +124,14 @@ box-shadow: 0 0 0 2px red;
 @media only screen and (min-width: 300px){
   .caja{
     
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
 @media only screen and (min-width: 350px){
   .caja{
     
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -178,7 +189,7 @@ box-shadow: 0 0 0 2px red;
    display: inline-block;
    position: relative;
    background-color: #f1f1f1;
-   color: red;
+   color: blue;
    top: 2px;
    height: 20px;
    width: 20px;
@@ -211,106 +222,97 @@ box-shadow: 0 0 0 2px red;
   }
 }
 
-
+.form-radio:checked::before
+{
+   position: absolute;
+   font: 13px/1 'Open Sans', sans-serif;
+   left: 7px;
+   top: 3px;
+   content: none;
+   transform: rotate(40deg);
+}
 .form-radio:hover
 {
-   background-color: rgb(245, 122, 122);
+   background-color: black;
 }
 .form-radio:checked
 {
-   background-color: red;
+   background-color: blue;
 }
-
+.label
+{
+   font: 15px/1.7 'Open Sans', sans-serif;
+   color: blue;
+   
+   cursor: pointer;
+}
 .imagen{
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   position: relative; 
   top: 8px;
-}
-
-@media only screen and (min-width: 350px){
-  .imagen{
-    width: 40px;
-    height: 40px;
-    position: relative; 
-    top: 8px;
-  }
-}
-@media only screen and (min-width: 720px){
-  .imagen{
-    width: 60px;
-    height: 60px;
-    position: relative; 
-    top: 8px;
-  }
 }
 
 a {
   text-decoration:none;
   color:#FFF;
 }
-
-.botonCalcular{
-  padding: 16px 36px;
-  border-radius: 6px;
-  border: 2px solid darkgrey;
-  background: transparent;
-  color: darkgrey;
-  font-size: 18px;
+.rainbow-button {
+  width:calc(25vw + 6px);
+  height:calc(6vw + 6px);
+  background-image: linear-gradient(60deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  border-radius:2px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-transform:uppercase;
+  font-size:2vw;
+  font-weight:bold;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  outline: none;
-  cursor: pointer;
-  transition-duration: 0.5s;
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial", sans-serif;
 }
-.botonCalcular:hover {
-  background-color: red;
-  color: black;
-  border-color: black;
+.rainbow-button:after {
+  content:attr(alt);
+  width: 25vw;
+  height: 6vw;
+  background-color:#030303;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.botonCalcular :focus{
-  box-shadow: 0 0 0 3px red;
-  border-radius: 3px;
+.rainbow-button:hover {
+  animation: slidebg 3s linear infinite;
 }
+
+@media only screen and (min-width: 720px){
+  .rainbow-button:after{
+    width: 14vw;
+    height: 4vw;
+  }
+}
+
+@media only screen and (min-width: 720px){
+  .rainbow-button{
+    width:calc(14vw + 6px);
+    height:calc(4vw + 6px);
+    font-size: 1.5vw;
+  }
+}
+
+
+@keyframes slidebg {
+  to {
+    background-position: 5vw;
+  }
+}
+
 
 .tablaResultado {
   border-collapse: collapse;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  
 }
-
-@media only screen and (min-width: 300px){
-  .tablaResultado{
-    
-    font-size: 10px;
-  }
-}
-
-@media only screen and (min-width: 350px){
-  .tablaResultado{
-    
-    font-size: 12px;
-  }
-}
-
-@media only screen and (min-width: 450px){
-  .tablaResultado{
-    
-    font-size: 14px;
-  }
-}
-
-@media only screen and (min-width: 720px){
-  .tablaResultado{
-    
-    font-size: 18px;
-  }
-}
-
 
 .encabezado, .columna {
   text-align: left;
@@ -326,12 +328,11 @@ a {
 
 .encabezado {
   background-color: rgb(58, 58, 58);
-  text-align: center;
   color: white;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-  width: 50%;
- 
 }
+
+
 
 h4 {
     
@@ -415,7 +416,7 @@ ul.social-icons {
     background-color: #322f30;
 }
 .fa-google:hover {
-    background-color: #f13e35;
+    background-color: #e64a41;
 }
 .fa-github {
     padding:10px 14px;
@@ -429,201 +430,3 @@ ul.social-icons {
 .fa-github:hover {
     background-color: #5a32a3;
 }
-
-
-.switch{
-  background: darkgoldenrod;
-  border-radius: 10px;
-  border: none;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  outline: none;
-  margin-left: auto;
-  margin-top: -1.7em;
- 
-}
-
-.switch .btndark{
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  display: block;
-  background: none;
-  color: #fff;
-  transition-duration: 0.5s;
-}
-
-.switch::after{
-  content: "";
-  display: block;
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  background: #F1F1F1;
-  top: 1px;
-  left: unset;
-  right: 3px;
-  border-radius: 100px;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
-}
-
-@media only screen and (min-width: 300px){
-  .switch .btndark{
-    width: 10px;
-    height: 12px;
-    line-height: 11.5px;
-  }
-}
-
-@media only screen and (min-width: 400px){
-  .switch .btndark{
-    width: 12px;
-    height: 16px;
-    line-height: 16px;
-  }
-}
-
-@media only screen and (min-width: 300px){
-  .switch::after{
-    width: 12px;
-    height: 12px;
-    line-height: 14px;
-    top: 1px;
-    left: 4px;
-  }
-}
-
-@media only screen and (min-width: 400px){
-  .switch::after{
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
-    top: 1px;
-    left: 3px;
-  }
-}
-
-@media only screen and (min-width: 600px){
-  .switch .btndark{
-    width: 14px;
-    height: 18px;
-    line-height: 18px;
-  }
-}
-
-@media only screen and (min-width: 600px){
-  .switch::after{
-    width: 17px;
-    height: 17px;
-    line-height: 16px;
-    top: 1px;
-    left: 3px;
-  }
-}
-
-
-
-
-/* Cambio de tema*/
-
-body.dark .switch {
-  background: #343D5B;
-  
-}
-
-body.dark .switch::after{
-  
-  top: 1px;
-  left: unset;
-  right: 3px;
-  
-}
-
-body.dark .caja {
-  color: black;
-  background: wheat;
-}
-
-body.dark .font{
-  color: black;
-}
-
-body.dark {
-  background: whitesmoke;
-}
-
-body.dark .cajatexto{
-  background-color: wheat;
-  border-radius: 6px;
-  border-color: #254BE6;
-  color: black;
-}
-
-body.dark .cajatexto:focus {
-  box-shadow: 0 0 0 2px #254BE6;
-}
-
-body.dark .font {
-  color: rgb(0, 0, 0);
-}
-
-body.dark .txt {
-  color: black;
-}
-
-body.dark .link_velocidad {
-  color: #254BE6;
-}
-
-body.dark .form-radio{
-  background-color: darkgrey;
-}
-
-body.dark .form-radio:checked
-{
-   background-color: #254BE6;
-}
-
-body.dark .form-radio:hover
-{
-   background-color: darkblue;
-}
-
-body.dark .fila {
-  color: black;
-  background-color: wheat;
-}
-
-body.dark .fila:nth-child(even){background-color: rgb(240, 200, 126)}
-
-body.dark ._14{
-  color: black;
-}
-
- body.dark ::placeholder {
-  color: black;
-}
-
-body.dark .botonCalcular {
-  border: 2px solid black;
-  color: black;
-
-}
-
-body.dark .botonCalcular:hover{
-  background-color: red;
-  color: wheat;
-  border-color: black;
-}
-
-
-body.dark .botonCalcular:hover {
-  background-color: #254BE6;
-}
-body.dark .botonCalcular :focus{
-  box-shadow: 0 0 0 3px #254BE6;
-  border-radius: 3px;
-}
-
-

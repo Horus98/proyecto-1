@@ -94,6 +94,16 @@ function alertar (valoresVacios, noSonNumeros) {
 	}
 }
 
+// Verifica que la entrada sean numeros validos.
+function noSonNumeros(velocidad,tamanio){
+	return !(verificarEntrada(Array.from(velocidad))) || !(verificarEntrada(Array.from(tamanio)));
+}
+
+// Verifica que la entrada no sean valores vacios.
+function valoresVacios(velocidad,tamanio){
+	return velocidad == "" || tamanio == "";
+}
+
 
 boton.onclick = function() {
 	var velForm = obtenerValorCheckeado(document.forms[0].descarga);
@@ -102,12 +112,10 @@ boton.onclick = function() {
 	var tam = tamForm.value;
 	var velocidadValue = velocidad.value;
 	var tamanioValue = tamanio.value;
-	var valoresVacios = velocidadValue == "" || tamanioValue == "";
-	var noSonNumeros = !(verificarEntrada(Array.from(velocidadValue))) || !(verificarEntrada(Array.from(tamanioValue)));
-	var hayQueAlertar = valoresVacios || noSonNumeros ;
+	var hayQueAlertar = valoresVacios(velocidadValue,tamanioValue) || noSonNumeros(velocidadValue,tamanioValue) ;
 
 	if (hayQueAlertar)
-		alertar(valoresVacios, noSonNumeros);
+		alertar(valoresVacios(velocidadValue,tamanioValue), noSonNumeros(velocidadValue,tamanioValue));
 	
 	else{
 		vel = (velocidadValue * vel) / 8;
