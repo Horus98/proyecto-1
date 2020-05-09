@@ -2,7 +2,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
 
-
+/* fuente utilizada por defecto */
 .font{
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 29px;
@@ -46,6 +46,8 @@
     }
   }
 
+
+ /* Color negro de background */ 
 .background {
 background-color: rgb(22, 22, 22);
 -webkit-font-smoothing: antialiased;
@@ -94,6 +96,8 @@ border-radius: 3px;
 box-shadow: 0 0 0 2px red;
 }
 
+/* Propiedades de la caja donde se muestra la informacion general de la pagina. */
+
 .caja { 
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
   color: #ffffff; 
@@ -133,6 +137,7 @@ box-shadow: 0 0 0 2px red;
 
 
 
+/* Propiedades del texto de los radio button y del input text */
 
 .txt {
   color: rgb(112, 112, 112);
@@ -169,6 +174,8 @@ box-shadow: 0 0 0 2px red;
     font-size: 18px;
   }
 }
+
+/* Todas las propiedades referidas a los radio button para la seleccion de las unidades. */
 
 .form-radio
 {
@@ -221,6 +228,9 @@ box-shadow: 0 0 0 2px red;
    background-color: red;
 }
 
+
+
+/* Imagen del logo de la empresa ;) */
 .imagen{
   width: 60px;
   height: 60px;
@@ -250,6 +260,7 @@ a {
   color:#FFF;
 }
 
+/* Propiedades del boton calcular. */
 .botonCalcular{
   padding: 16px 36px;
   border-radius: 6px;
@@ -274,6 +285,9 @@ a {
   box-shadow: 0 0 0 3px red;
   border-radius: 3px;
 }
+
+
+/* Tablas donde se muestran los resultados. */
 
 .tablaResultado {
   border-collapse: collapse;
@@ -332,6 +346,9 @@ a {
   width: 50%;
  
 }
+
+
+/* Todo lo referido a los contactos de las redes sociales. */
 
 h4 {
     
@@ -431,6 +448,8 @@ ul.social-icons {
 }
 
 
+
+/* Boton de cambio de tema */
 .switch{
   background: darkgoldenrod;
   border-radius: 10px;
@@ -467,6 +486,8 @@ ul.social-icons {
   border-radius: 100px;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
 }
+
+/* Tamaños del boton de cambio de tema segun la pantalla donde se corra la web */
 
 @media only screen and (min-width: 300px){
   .switch .btndark{
@@ -527,12 +548,12 @@ ul.social-icons {
 
 /* Cambio de tema*/
 
-body.dark .switch {
+body.light .switch {
   background: #343D5B;
   
 }
 
-body.dark .switch::after{
+body.light .switch::after{
   
   top: 1px;
   left: unset;
@@ -540,88 +561,88 @@ body.dark .switch::after{
   
 }
 
-body.dark .caja {
+body.light .caja {
   color: black;
   background: wheat;
 }
 
-body.dark .font{
+body.light .font{
   color: black;
 }
 
-body.dark {
+body.light {
   background: whitesmoke;
 }
 
-body.dark .cajatexto{
+body.light .cajatexto{
   background-color: wheat;
   border-radius: 6px;
   border-color: #254BE6;
   color: black;
 }
 
-body.dark .cajatexto:focus {
+body.light .cajatexto:focus {
   box-shadow: 0 0 0 2px #254BE6;
 }
 
-body.dark .font {
+body.light .font {
   color: rgb(0, 0, 0);
 }
 
-body.dark .txt {
+body.light .txt {
   color: black;
 }
 
-body.dark .link_velocidad {
+body.light .link_velocidad {
   color: #254BE6;
 }
 
-body.dark .form-radio{
+body.light .form-radio{
   background-color: darkgrey;
 }
 
-body.dark .form-radio:checked
+body.light .form-radio:checked
 {
    background-color: #254BE6;
 }
 
-body.dark .form-radio:hover
+body.light .form-radio:hover
 {
    background-color: darkblue;
 }
 
-body.dark .fila {
+body.light .fila {
   color: black;
   background-color: wheat;
 }
 
-body.dark .fila:nth-child(even){background-color: rgb(240, 200, 126)}
+body.light .fila:nth-child(even){background-color: rgb(240, 200, 126)}
 
-body.dark ._14{
+body.light ._14{
   color: black;
 }
 
- body.dark ::placeholder {
+ body.light ::placeholder {
   color: black;
 }
 
-body.dark .botonCalcular {
+body.light .botonCalcular {
   border: 2px solid black;
   color: black;
 
 }
 
-body.dark .botonCalcular:hover{
+body.light .botonCalcular:hover{
   background-color: red;
   color: wheat;
   border-color: black;
 }
 
 
-body.dark .botonCalcular:hover {
+body.light .botonCalcular:hover {
   background-color: #254BE6;
 }
-body.dark .botonCalcular :focus{
+body.light .botonCalcular :focus{
   box-shadow: 0 0 0 3px #254BE6;
   border-radius: 3px;
 }

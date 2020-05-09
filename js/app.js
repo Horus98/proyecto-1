@@ -212,9 +212,9 @@ const btnSwitch = getElement("switch");
 
 btnSwitch.onclick = function () {
 	var classList  = document.body.classList;
-	classList.toggle('dark');
+	classList.toggle('light');
 	// Guardamos en el localStorage.
-	if (classList.contains('dark')){
+	if (classList.contains('light')){
 		localStorage.setItem('dark-mode','true');
 	}
 	else
@@ -225,7 +225,7 @@ btnSwitch.onclick = function () {
 function actualizarTema () {
 	var classList = document.body.classList;
 	if(localStorage.getItem('dark-mode') === 'true')
-		classList.add('dark');
+		classList.add('light');
 	else
-		classList.remove('dark');
+		classList.remove('light');
 }
