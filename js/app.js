@@ -1,4 +1,5 @@
 var boton = getElement("botonCalcular");
+var btnCleanStorage = getElement("cleanStorage");
 var velocidad = getElement("velocidadDescarga");
 var tamanio = getElement("tamArchivo");
 var tablaValoresAnterioresBody = getElement("tablaValoresAnterioresBody");
@@ -205,6 +206,14 @@ function actualizarTablaValores (){
 		}
 }
 }
+
+// Limplia la tabla de valores anteriormente ingresados.
+btnCleanStorage.onclick = function () {
+	localStorage.removeItem(clave);
+	actualizarTablaValores();
+}
+
+
 
 const btnSwitch = getElement("switch");
 
