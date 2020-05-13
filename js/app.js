@@ -54,7 +54,7 @@ function calcularTiempo(tam,vel){
   seconds = seconds < 10 ? '0' + seconds : seconds;
    
   seconds = Math.floor(seconds);
-  var result = hours + " Horas " + minutes + " Minutos " + seconds +" Segundos" ;
+  var result = formatNumber(hours) + " Horas " + minutes + " Minutos " + seconds +" Segundos" ;
   return result;
 }
 
@@ -141,6 +141,10 @@ boton.onclick = function() {
 
 }
 
+function formatNumber(number){
+	return new Intl.NumberFormat("de-ES").format(number);
+}
+
 
 // Almacena una cadena en el localStorage.
 function storeCadena(cadena) {  
@@ -178,8 +182,8 @@ function init(){
 
 // Arma la cadena para luego ser mostrada en la tablaValoresAnteriores.
 function armarCadena(vel,tam,tiempoVelocidadUsuario,unidadVel,unidadTam) {
-		var velocidad = "Velocidad: " + vel + unidadVel + " || ";
-		var tamanio = "Tamaño: " + tam + unidadTam + " || ";
+		var velocidad = "Velocidad: " +formatNumber(vel) + unidadVel + " || ";
+		var tamanio = "Tamaño: " + formatNumber(tam) + unidadTam + " || ";
 	return velocidad + tamanio +"Tiempo: " + tiempoVelocidadUsuario;;
 }
 
