@@ -54,6 +54,14 @@ background-color: rgb(22, 22, 22);
 
 }
 
+/* Margen laterales para pantallas grandes unicamente*/
+@media only screen and (min-width: 720px){
+  .background{
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+
 .link_velocidad {
   color: red;
 }

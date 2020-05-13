@@ -4,7 +4,6 @@ var velocidad = getElement("velocidadDescarga");
 var tamanio = getElement("tamArchivo");
 var tablaValoresAnterioresBody = getElement("tablaValoresAnterioresBody");
 
-// https://sweetalert2.github.io/ libreria alert.
 const valoresAlmacenados = 5;
 const clave = "claveAlmacenamiento";
 
@@ -69,7 +68,7 @@ function verificarEntrada(entrada){
 }
 
 // Crea una alerta personalizada.
-function alerta(texto){
+function alertar(texto){
 	Swal.fire({
 		icon: 'error',
 		title: 'Oops...',
@@ -82,14 +81,14 @@ function alerta(texto){
 }
 
 // Alerta segun el error.
-function alertar (valoresVacios, noSonNumeros) {
+function alertarErrores (valoresVacios, noSonNumeros) {
 	if (valoresVacios){
-		alerta('Complete ambos campos!')
+		alertar('Complete ambos campos!')
 		cleanInputText();
 	}
 	else{
 		if(noSonNumeros){
-			alerta('Por favor recuerde que debe ingresar numeros enteros!')
+			alertar('Por favor recuerde que debe ingresar numeros enteros!')
 			cleanInputText();
 		}
 	}
@@ -116,23 +115,18 @@ boton.onclick = function() {
 	var hayQueAlertar = valoresVacios(velocidadValue,tamanioValue) || noSonNumeros(velocidadValue,tamanioValue) ;
 
 	if (hayQueAlertar)
-		alertar(valoresVacios(velocidadValue,tamanioValue), noSonNumeros(velocidadValue,tamanioValue));
+		alertarErrores(valoresVacios(velocidadValue,tamanioValue), noSonNumeros(velocidadValue,tamanioValue));
 	
 	else{
 		vel = (velocidadValue * vel) / 8;
 		tam = tamanioValue * tam;
-		
-		var tiempoVelocidadUsuario = calcularTiempo(tam,vel);
-		var tiempoVelocidad5G = calcularTiempo(tam,velocidad5G);
-		var tiempoVelocidad4G = calcularTiempo(tam,velocidad4G);
-		var tiempoVelocidad3G = calcularTiempo(tam,velocidad3G);
 
-		 
+		let tiempoVelocidadUsuario = calcularTiempo(tam,vel);	
 		storeCadena(armarCadena(velocidadValue,tamanioValue,tiempoVelocidadUsuario,velForm.id,tamForm.id));
 
-		insertElement("vel3g",tiempoVelocidad3G);
-		insertElement("vel4g",tiempoVelocidad4G);
-		insertElement("vel5g",tiempoVelocidad5G);
+		insertElement("vel3g",calcularTiempo(tam,velocidad3G));
+		insertElement("vel4g",calcularTiempo(tam,velocidad4G));
+		insertElement("vel5g",calcularTiempo(tam,velocidad5G));
 		insertElement("tuVelocidad",tiempoVelocidadUsuario);
 
 		actualizarTablaValores();
@@ -153,7 +147,7 @@ function storeCadena(cadena) {
 		insertar(cadenaArray,cadena);
 		localStorage.setItem(clave, JSON.stringify(cadenaArray));
 	} else
-		alerta("El localStorage no está habilitado en su navegador");   
+		alertar("El localStorage no está habilitado en su navegador");   
 }
 
 // Devuelve un arreglo con las cadenas almacenadas en el localStorage
